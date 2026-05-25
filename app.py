@@ -7,6 +7,15 @@ import sqlite3
 from lime.lime_tabular import LimeTabularExplainer
 from database import init_db, simpan_riwayat, hapus_riwayat, load_data
 
+# Sembunyikan tombol header bawaan Streamlit (GitHub, Share, dll)
+st.markdown("""
+    <style>
+    header[data-testid="stHeader"] {
+        visibility: hidden;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # =============================
 # CONFIG
 # =============================
