@@ -7,11 +7,16 @@ import sqlite3
 from lime.lime_tabular import LimeTabularExplainer
 from database import init_db, simpan_riwayat, hapus_riwayat, load_data
 
-# Sembunyikan tombol header bawaan Streamlit (GitHub, Share, dll)
+# Menyembunyikan tombol Share & GitHub, tapi TETAP memunculkan menu titik tiga
 st.markdown("""
     <style>
+    /* Sembunyikan seluruh komponen header atas */
     header[data-testid="stHeader"] {
         visibility: hidden;
+    }
+    /* Paksa tombol titik tiga (Main Menu) agar tetap kelihatan */
+    header[data-testid="stHeader"] [data-testid="stMainMenu"] {
+        visibility: visible;
     }
     </style>
 """, unsafe_allow_html=True)
